@@ -1,13 +1,24 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-// import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './style.scss'
+
+import Register from './components/Auth/Register'
+
 
 
 class App extends React.Component {
   render() {
     return (
-      <h1> Hello World! </h1>
+      <div>
+        <BrowserRouter>
+          <main>
+            <Switch>
+              <Route path="/register" component={Register} />
+            </Switch>
+          </main>
+        </BrowserRouter>
+      </div>
     )
   }
 }
