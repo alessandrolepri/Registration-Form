@@ -18,6 +18,10 @@ import FlashMessages from './components/common/FlashMessages'
 
 
 class App extends React.Component {
+  constructor() {
+    super()
+  }
+  
   render() {
     return (
       <div>
