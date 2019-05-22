@@ -8,6 +8,8 @@ import Login from './components/Auth/Login'
 import ResetPassword from './components/Auth/ResetPassword'
 import NewPassword from './components/Auth/NewPassword'
 import Confirm from './components/Auth/Confirm'
+import Home from './components/common/Home'
+
 
 
 
@@ -23,6 +25,8 @@ class App extends React.Component {
               <Route path="/login" component={Login} />
               <Route path="/resetpassword" component={ResetPassword} />
               <Route path="/newpassword/:id" component={NewPassword} />
+              <Route path="/" component={Home} />
+
             </Switch>
           </main>
         </BrowserRouter>
