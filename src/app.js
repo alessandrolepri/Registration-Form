@@ -9,6 +9,10 @@ import ResetPassword from './components/Auth/ResetPassword'
 import NewPassword from './components/Auth/NewPassword'
 import Confirm from './components/Auth/Confirm'
 import Home from './components/common/Home'
+import NavBar from './components/common/Navbar'
+import FlashMessages from './components/common/FlashMessages'
+
+
 
 
 
@@ -19,6 +23,8 @@ class App extends React.Component {
       <div>
         <BrowserRouter>
           <main>
+            <NavBar />
+            <FlashMessages />
             <Switch>
               <Route path="/register" component={Register} />
               <Route path="/confirm/:code" component={Confirm} />
