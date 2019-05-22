@@ -5,7 +5,7 @@ import React from 'react'
 class Home extends React.Component  {
   render() {
     return (
-      <img src="https://www.stpeterschurchrawdon.co.uk/images/blog/welcome.jpg" />
+      <img src="https://www.stpeterschurchrawdon.co.uk/images/blog/welcome.jpg" alt="Welcome to Registration Form" />
     )
   }
 }

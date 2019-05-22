@@ -36,7 +36,7 @@ class Register extends React.Component{
     axios.post('/api/register', this.state.postData)
       .then(() => {
         Flash.setMessage('success', 'Please check your email address to verify your account' )
-        this.props.history.push('/login')
+        this.props.history.push('/')
       })
       .catch(err => this.setState({ errors: err.response.data }))
   }

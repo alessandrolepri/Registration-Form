@@ -7,7 +7,7 @@ mongoose.Promise = Promise
 
 // const User = require('../models/user')
 
-mongoose.connect(process.env.MONGODB_URI, (err, db) => {
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }, (err, db) => {
   db.dropDatabase()
     .then(() => console.log('Database successfully seeded'))
     .catch(err => console.log(err))

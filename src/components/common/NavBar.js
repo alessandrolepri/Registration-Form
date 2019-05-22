@@ -4,7 +4,7 @@ import { Segment, Menu, Icon } from 'semantic-ui-react'
 import Auth from '../../lib/Auth'
 
 
-class Navbar extends React.Component{
+class NavBar extends React.Component{
   constructor(){
     super()
 
@@ -78,4 +78,4 @@ class Navbar extends React.Component{
 
 
 
-export default withRouter(Navbar)
+export default withRouter(NavBar)

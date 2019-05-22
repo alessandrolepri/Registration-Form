@@ -11,23 +11,23 @@ const userSchema = new mongoose.Schema({
   confirmCode: { type: String, required: true }
 })
 
-userSchema.virtual('post', {
+userSchema.virtual('posts', {
   ref: 'Post',
   localField: '_id',
   foreignField: 'user'
 })
 
 userSchema.virtual('passwordConfirmation')
-  .set(function setPasswordConfirmation(passwordConfirmation) {
+  .set(function setPasswordConfirmtion(passwordConfirmation) {
     this._passwordConfirmation = passwordConfirmation
   })
 
-userSchema.pre('validate', function checkPasswordMatch(next) {
+userSchema.pre('validate', function checkPasswordMatch(next){
   if(
     this.isModified('password') &&
     this._passwordConfirmation !== this.password
   ) {
-    this.invalidate('passwordConfirmation', 'Password do not match')
+    this.invalidate('passwordConfirmation', 'Passwords do not match')
   }
 
   next()
@@ -35,14 +35,14 @@ userSchema.pre('validate', function checkPasswordMatch(next) {
 })
 
 userSchema.pre('validate', function generateConfirmCode(next) {
-  if(
-    this.isModified('email')) {
+  if(this.isModified('email')) {
     this.confirmCode = Math.random().toString(16).substr(2)
   }
 
   next()
 
 })
+
 
 userSchema.pre('save', function hashPassword(next) {
   if(this.isModified('password')) {
@@ -52,6 +52,10 @@ userSchema.pre('save', function hashPassword(next) {
   next()
 
 })
+
+userSchema.methods.validatePassword = function(password) {
+  return bcrypt.compareSync(password, this.password)
+}
 
 userSchema.set('toJSON', {
   virtuals: true,

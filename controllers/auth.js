@@ -17,7 +17,7 @@ function loginRoute( req, res ) {
       }
 
       const payload = { sub: user._id }
-      const token = jwt.sign(payload, process.env.SECRET, { expiresIn: '1h' })
+      const token = jwt.sign(payload, process.env.SECRET, { expiresIn: '4h' })
 
       res.json({
         token,
@@ -36,8 +36,6 @@ function passwordReset( req, res, next ) {
         return res.status(401).json({ message: 'Unauthorized' })
       }
 
-      // user has been found
-      // send an email
       mailer.sendResetPassword(user)
     })
     .then(() => res.json({ message: 'Email has been succesfully sent to your address'}))
