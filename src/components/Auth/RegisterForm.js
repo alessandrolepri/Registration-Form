@@ -5,7 +5,7 @@ import { Segment, Grid, Form, Input, Divider, Button, Icon, Message } from 'sema
 
 
 
-const RegisterForm = ({ handleChange, handleSubmit, errors, imageSuccess}) => {
+const RegisterForm = ({ handleChange, handleSubmit, postData, errors }) => {
 
   const errorMessages = Object.keys(errors).map(errorKey => {
     return errors[errorKey]
@@ -17,12 +17,8 @@ const RegisterForm = ({ handleChange, handleSubmit, errors, imageSuccess}) => {
         <Divider hidden />
         <Segment color='blue'>
           <Icon name='add user' size='huge' />
-          {imageSuccess && <Message
-            success> Image Successfully Uploaded </Message>
-          }
 
-          {/* displaying any error messages the user has received */}
-          {errorMessages.length >0 && <Message
+          {errorMessages.length > 0 && < Message
             error
             header='There were some errors with your submission'
             list={errorMessages}
