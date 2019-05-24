@@ -7,7 +7,6 @@ class Auth {
     return localStorage.getItem('token')
   }
 
-  // get payload from token
   static getPayload(){
     const token = this.getToken()
     if(!token) return false
@@ -21,7 +20,6 @@ class Auth {
   }
 
 
-  // get users id from the payload, to be used when checking if able to delete comments
   static getUserID(){
     return this.getPayload().sub
   }

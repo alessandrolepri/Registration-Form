@@ -5,7 +5,6 @@ const Promise = require('bluebird')
 
 mongoose.Promise = Promise
 
-// const User = require('../models/user')
 
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }, (err, db) => {
   db.dropDatabase()

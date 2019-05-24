@@ -30,7 +30,7 @@ class NavBar extends React.Component{
 
   render() {
     const { activeItem } = this.state
-    // const cityOptions =  [ { key: '_id', value: '_id', text: 'London' }, {key: '_id2', value: '_id2', text: 'Barcelona'}]
+
 
     return (
       <Segment inverted id="nav">

@@ -9,7 +9,8 @@ import axios from 'axios'
 class Login extends React.Component{
   constructor(){
     super()
-    // data to be sent to back end login route, errors displayed as  message on form
+
+
     this.state={
       postData: {
         email: '',
@@ -65,8 +66,8 @@ class Login extends React.Component{
           <Segment color="blue">
             <Icon name='user circle' size='huge' />
 
-            {/* displaying error messages when they exist, passing in list  of error messages */}
-            {errorMessages.length >0 && <Message
+
+            {errorMessages.length > 0 && < Message
               error
               header='There was some errors with your submission'
               list={errorMessages}
