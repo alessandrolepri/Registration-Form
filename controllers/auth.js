@@ -27,7 +27,6 @@ function loginRoute( req, res ) {
     })
 }
 
-//fnd user and send email to user /confirmpassword
 
 function passwordReset( req, res, next ) {
   User.findOne({ email: req.body.email, verified: true })

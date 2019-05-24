@@ -23,20 +23,11 @@ function updateRoute(req, res, next) {
     .then(user => res.json(user))
     .catch(next)
 }
-//
-// function deleteRoute(req, res, next) {
-//   User
-//     .findById(req.params.id)
-//     .then(user => user.remove())
-//     .then(user => user.save())
-//     .then(res.json({message: 'User deleted'}))
-//     .catch(next)
-// }
+
 
 
 module.exports = {
   index: indexRoute,
   create: createRoute,
   update: updateRoute
-  // delete: deleteRoute
 }
